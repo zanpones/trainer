@@ -17,10 +17,10 @@
 
 <div class="menu">
 
-<a href="segunda.html"><button>SEGUNDA</button></a>
-<a href="quarta.html"><button>QUARTA</button></a>
-<a href="sexta.html"><button>SEXTA</button></a>
-<a href="peso.html"><button>⚖️ RESULTADO DE PESO</button></a>
+<a href="segunda.html"><button class="btn-menu">SEGUNDA</button></a>
+<a href="quarta.html"><button class="btn-menu">QUARTA</button></a>
+<a href="sexta.html"><button class="btn-menu">SEXTA</button></a>
+<a href="peso.html"><button>⚖️ RESULTADO DE PESO</button></a>  
 
 </div>
 
@@ -28,11 +28,11 @@
 
 <div class="cal-top">
 
-<button onclick="mesAnterior()">⬅</button>
+<button class="mes-btn" onclick="mesAnterior()">⬅</button>
 
 <h2 id="mes"></h2>
 
-<button onclick="proximoMes()">➡</button>
+<button class="mes-btn" onclick="proximoMes()">➡</button>
 
 </div>
 
@@ -56,8 +56,8 @@
 
 <h2>📌 Observação</h2>
 
-<p>Terça-feira → Descanso ou Cardio</p>
-<p>Quinta-feira → Cardio + Abdômen</p>
+<p>Terça → Descanso ou Cardio</p>
+<p>Quinta → Cardio + Abdômen</p>
 
 </div>
 
@@ -99,6 +99,8 @@ for(let dia=1;dia<=ultimoDia;dia++){
 
 let btn=document.createElement("button")
 
+btn.classList.add("dia")
+
 btn.innerText=dia
 
 let chave="treino-"+ano+"-"+mes+"-"+dia
@@ -134,7 +136,6 @@ calendario.appendChild(btn)
 function proximoMes(){
 
 data.setMonth(data.getMonth()+1)
-
 gerarCalendario()
 
 }
@@ -142,7 +143,6 @@ gerarCalendario()
 function mesAnterior(){
 
 data.setMonth(data.getMonth()-1)
-
 gerarCalendario()
 
 }

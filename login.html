@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - Meu Treino</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="login-body">
+
+<div class="login">
+
+<h1>🏋️ Meu Treino</h1>
+
+<input type="text" placeholder="Usuário" id="user">
+
+<input type="password" placeholder="Senha" id="pass">
+
+<button onclick="entrar()">Entrar</button>
+
+</div>
+
+<script>
+
+function entrar(){
+
+let user=document.getElementById("user").value
+let pass=document.getElementById("pass").value
+
+if(user=="admin" && pass=="1234"){
+
+window.location.href="menu.html"
+
+}else{
+
+alert("Login inválido")
+
+}
+
+}
+
+/* PWA */
+
+if ("serviceWorker" in navigator) {
+navigator.serviceWorker.register("service-worker.js")
+}
+
+</script>
+
+</body>
+</html>

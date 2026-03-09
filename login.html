@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
@@ -8,6 +9,7 @@
 <title>Login - Meu Treino</title>
 
 <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
 
 </head>
 
@@ -17,9 +19,9 @@
 
 <h1>🏋️ Meu Treino</h1>
 
-<input type="text" placeholder="Usuário" id="user">
+<input type="text" id="user" placeholder="Usuário">
 
-<input type="password" placeholder="Senha" id="pass">
+<input type="password" id="pass" placeholder="Senha">
 
 <button onclick="entrar()">Entrar</button>
 
@@ -27,10 +29,12 @@
 
 <script>
 
+/* LOGIN */
+
 function entrar(){
 
-let user=document.getElementById("user").value
-let pass=document.getElementById("pass").value
+let user = document.getElementById("user").value
+let pass = document.getElementById("pass").value
 
 if(user=="admin" && pass=="1234"){
 
@@ -38,19 +42,22 @@ window.location.href="menu.html"
 
 }else{
 
-alert("Login inválido")
+alert("Usuário ou senha incorreto")
 
 }
 
 }
 
-/* PWA */
+/* SERVICE WORKER PWA */
 
 if ("serviceWorker" in navigator) {
+
 navigator.serviceWorker.register("service-worker.js")
+
 }
 
 </script>
 
 </body>
+
 </html>

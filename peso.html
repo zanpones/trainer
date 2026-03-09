@@ -5,57 +5,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Peso</title>
+<title>Controle de Peso</title>
 
 <style>
 
 body{
-
 background:#0f172a;
 color:white;
 font-family:Arial;
 text-align:center;
 padding:20px;
-
 }
 
 .card{
-
 background:#1e293b;
 padding:20px;
 border-radius:12px;
 margin-top:20px;
-
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
 }
 
 input{
-
 width:100%;
 padding:12px;
 border-radius:8px;
 border:none;
 margin-top:10px;
-
 }
 
 button{
-
 width:100%;
 padding:12px;
-margin-top:10px;
+margin-top:15px;
 background:#3b82f6;
 border:none;
 border-radius:8px;
 color:white;
 font-size:16px;
-
+cursor:pointer;
 }
 
 .resultado{
-
 margin-top:20px;
 font-size:18px;
-
+line-height:1.6;
 }
 
 </style>
@@ -64,21 +57,23 @@ font-size:18px;
 
 <body>
 
-<h1>⚖️ Controle de Peso</h1>
+<h1>⚖️ IA Controle de Peso</h1>
 
 <div class="card">
 
-<label>Peso da semana (kg)</label>
+<label>Altura (ex: 1.75)</label>
+<input type="number" step="0.01" id="altura">
 
+<label>Peso atual (kg)</label>
 <input type="number" id="peso">
 
-<button onclick="salvarPeso()">Salvar Peso</button>
+<button onclick="calcular()">Analisar</button>
 
 </div>
 
 <div class="card">
 
-<h2>📊 Resultado IA</h2>
+<h2>📊 Resultado</h2>
 
 <div id="resultado" class="resultado"></div>
 
@@ -86,50 +81,43 @@ font-size:18px;
 
 <script>
 
-function salvarPeso(){
+function calcular(){
 
-let peso=document.getElementById("peso").value
+let altura = parseFloat(document.getElementById("altura").value)
+let peso = parseFloat(document.getElementById("peso").value)
 
-localStorage.setItem("pesoAtual",peso)
-
-analisarPeso()
-
-}
-
-function analisarPeso(){
-
-let peso=localStorage.getItem("pesoAtual")
+let imc = peso / (altura * altura)
 
 let msg=""
 
-if(peso>95){
-
-msg="⚠️ Peso alto. Sugestão: reduzir açúcar e aumentar cardio para 20 min."
-
+if(imc < 18.5){
+msg="Peso abaixo do ideal. Foque em ganhar massa."
 }
-
-else if(peso>85){
-
-msg="👍 Peso intermediário. Continue treino + cardio 10 a 15 min."
-
+else if(imc < 25){
+msg="Peso ideal. Continue com treino e alimentação equilibrada."
 }
-
+else if(imc < 30){
+msg="Leve sobrepeso. Sugestão: cardio 15 min + reduzir açúcar."
+}
 else{
-
-msg="🔥 Ótimo peso. Foco em manter dieta equilibrada."
-
+msg="Sobrepeso alto. Sugestão: cardio 20-30 min + dieta controlada."
 }
+
+let pesoIdealMin = 18.5 * (altura*altura)
+let pesoIdealMax = 24.9 * (altura*altura)
 
 document.getElementById("resultado").innerHTML=
 
-"Peso atual: "+peso+" kg <br><br>"+msg
+"IMC: "+imc.toFixed(2)+"<br><br>"+
+"Peso ideal entre:<br>"+
+pesoIdealMin.toFixed(1)+" kg e "+pesoIdealMax.toFixed(1)+" kg<br><br>"+
+msg
 
 }
-<a href="menu.html"><button class="voltar">⬅ Voltar</button></a>
-analisarPeso()
 
 </script>
 
+<a href="menu.html"><button class="voltar">⬅ Voltar</button></a> 
+  
 </body>
-
 </html>

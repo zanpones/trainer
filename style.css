@@ -1,147 +1,141 @@
 body{
 
 background:#0f172a;
-
-font-family:Arial;
-
 color:white;
-
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+padding:20px;
 margin:0;
 
-padding:20px;
+}
 
-text-align:center;
+/* TITULO */
+
+h1{
+
+margin-bottom:20px;
 
 }
 
-.titulo{
-
-margin-top:10px;
-
-}
+/* MENU */
 
 .menu button{
 
-width:100%;
-
-margin:10px 0;
-
-}
-
-button{
-
-background:#3b82f6;
-
-border:none;
-
+width:90%;
+max-width:300px;
+margin:8px;
 padding:15px;
-
-font-size:18px;
-
-border-radius:12px;
-
+font-size:16px;
+border-radius:10px;
+border:none;
+background:#3b82f6;
 color:white;
-
 cursor:pointer;
 
 }
 
-button:active{
-
-transform:scale(0.95);
-
-}
+/* CARD */
 
 .card{
 
 background:#1e293b;
-
-margin-top:20px;
-
 padding:20px;
-
 border-radius:12px;
-
-box-shadow:0 5px 20px rgba(0,0,0,0.4);
+margin-top:25px;
+box-shadow:0 8px 25px rgba(0,0,0,0.5);
 
 }
 
-.obs{
+/* TOPO CALENDARIO */
 
-margin-top:30px;
-
-background:#1e293b;
-
-padding:15px;
-
-border-radius:12px;
-
-}
-
-.login-body{
+.cal-top{
 
 display:flex;
-
+justify-content:space-between;
 align-items:center;
-
-justify-content:center;
-
-height:100vh;
+margin-bottom:10px;
 
 }
 
-.login-box{
+.cal-top button{
 
-background:#1e293b;
-
-padding:30px;
-
-border-radius:12px;
-
-width:90%;
-
-max-width:300px;
-
-}
-
-input{
-
-width:100%;
-
-padding:12px;
-
-margin-top:10px;
-
+width:40px;
+height:40px;
 border-radius:8px;
-
 border:none;
+background:#3b82f6;
+color:white;
+font-size:18px;
 
 }
 
-.voltar{
+/* DIAS DA SEMANA */
 
-margin-top:20px;
+.dias-semana{
 
-width:100%;
+display:grid;
+grid-template-columns:repeat(7,1fr);
+font-size:13px;
+margin-bottom:6px;
+opacity:0.8;
 
 }
+
+.dias-semana div{
+
+padding:6px;
+
+}
+
+/* CALENDARIO */
 
 #calendario{
 
 display:grid;
 grid-template-columns:repeat(7,1fr);
-gap:8px;
-margin-top:15px;
+gap:6px;
 
 }
 
 #calendario button{
 
-padding:12px;
+padding:10px;
 border:none;
 border-radius:8px;
-background:#3b82f6;
+background:#334155;
 color:white;
 font-size:14px;
+cursor:pointer;
+
+}
+
+/* DIA TREINADO */
+
+.treinado{
+
+background:#22c55e !important;
+
+}
+
+/* OBSERVAÇÃO */
+
+.obs{
+
+margin-top:25px;
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+
+}
+
+/* RESPONSIVO */
+
+@media (max-width:500px){
+
+.menu button{
+
+width:100%;
+
+}
 
 }

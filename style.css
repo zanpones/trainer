@@ -125,3 +125,23 @@ margin-top:20px;
 width:100%;
 
 }
+
+#calendario{
+
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:8px;
+margin-top:15px;
+
+}
+
+#calendario button{
+
+padding:12px;
+border:none;
+border-radius:8px;
+background:#3b82f6;
+color:white;
+font-size:14px;
+
+}

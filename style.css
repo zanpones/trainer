@@ -1,17 +1,32 @@
+/* RESET */
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 }
+
+/* BODY */
 
 body{
 
 background:#f1f5f9;
-text-align:center;
 padding:20px;
+text-align:center;
 
 }
+
+/* TITULOS */
+
+h1{
+
+margin-bottom:20px;
+color:#1e293b;
+
+}
+
+/* LOGIN */
 
 .login-body{
 
@@ -31,12 +46,13 @@ padding:40px;
 border-radius:15px;
 width:300px;
 
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+
 }
 
 .login h1{
 
 color:white;
-margin-bottom:20px;
 
 }
 
@@ -44,9 +60,10 @@ margin-bottom:20px;
 
 width:100%;
 padding:10px;
-margin-bottom:10px;
-border-radius:8px;
+margin-top:10px;
+
 border:none;
+border-radius:8px;
 
 }
 
@@ -54,17 +71,23 @@ border:none;
 
 width:100%;
 padding:10px;
+margin-top:10px;
+
 border:none;
-border-radius:8px;
+border-radius:10px;
+
 background:#3b82f6;
 color:white;
+
 cursor:pointer;
 
 }
 
+/* MENU */
+
 .menu{
 
-margin-bottom:20px;
+margin-bottom:25px;
 
 }
 
@@ -73,17 +96,23 @@ margin-bottom:20px;
 display:flex;
 justify-content:center;
 gap:10px;
+flex-wrap:wrap;
 
 }
 
 .btn-menu{
 
 padding:10px 15px;
+
 border:none;
 border-radius:10px;
+
 background:#3b82f6;
 color:white;
+
 cursor:pointer;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
 
 }
 
@@ -96,22 +125,38 @@ margin-top:10px;
 .btn-peso{
 
 padding:10px 20px;
+
 border:none;
 border-radius:10px;
+
 background:#22c55e;
 color:white;
 
+cursor:pointer;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+
 }
+
+/* CARD CALENDARIO */
 
 .card{
 
 background:white;
+
 padding:20px;
+
 border-radius:15px;
+
 max-width:500px;
+
 margin:auto;
 
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+
 }
+
+/* TOPO CALENDARIO */
 
 .cal-top{
 
@@ -119,41 +164,62 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
+margin-bottom:10px;
+
 }
 
 .mes-btn{
 
+border:none;
+
 background:#3b82f6;
 color:white;
-border:none;
-padding:5px 10px;
+
+padding:6px 12px;
+
 border-radius:8px;
 
+cursor:pointer;
+
 }
+
+/* DIAS SEMANA */
 
 .dias-semana{
 
 display:grid;
 grid-template-columns:repeat(7,1fr);
+
+font-weight:bold;
+
 margin-top:10px;
 
 }
+
+/* CALENDARIO */
 
 #calendario{
 
 display:grid;
 grid-template-columns:repeat(7,1fr);
-gap:5px;
+
+gap:6px;
+
 margin-top:10px;
 
 }
 
 .dia{
 
-padding:10px;
 border:none;
+
+padding:10px;
+
 border-radius:8px;
+
 background:#e5e7eb;
+
+cursor:pointer;
 
 }
 
@@ -161,5 +227,200 @@ background:#e5e7eb;
 
 background:#22c55e;
 color:white;
+
+}
+
+/* OBSERVAÇÃO */
+
+.obs{
+
+margin-top:25px;
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+max-width:500px;
+
+margin-left:auto;
+margin-right:auto;
+
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+
+}
+
+.obs h2{
+
+margin-bottom:10px;
+
+}
+
+/* TREINO */
+
+.treino{
+
+max-width:500px;
+
+margin:auto;
+
+}
+
+/* CARD EXERCICIO */
+
+.exercicio{
+
+background:white;
+
+padding:20px;
+
+border-radius:12px;
+
+margin-bottom:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+.exercicio h2{
+
+margin-bottom:5px;
+
+color:#1e293b;
+
+}
+
+.exercicio p{
+
+color:#64748b;
+
+}
+
+.exercicio label{
+
+display:block;
+
+margin-top:10px;
+
+}
+
+/* BOTÃO VOLTAR */
+
+.voltar{
+
+margin-top:20px;
+
+padding:10px 20px;
+
+border:none;
+
+border-radius:10px;
+
+background:#3b82f6;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+/* PESO */
+
+.peso-card{
+
+background:white;
+
+max-width:400px;
+
+margin:auto;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+.peso-card input{
+
+width:100%;
+
+padding:10px;
+
+margin-top:10px;
+
+margin-bottom:10px;
+
+border-radius:8px;
+
+border:1px solid #cbd5e1;
+
+}
+
+.peso-card button{
+
+padding:10px 20px;
+
+border:none;
+
+border-radius:10px;
+
+background:#22c55e;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+/* RESPONSIVO CELULAR */
+
+@media (max-width:500px){
+
+body{
+
+padding:15px;
+
+}
+
+h1{
+
+font-size:24px;
+
+}
+
+.btn-menu{
+
+font-size:13px;
+padding:8px 12px;
+
+}
+
+.btn-peso{
+
+font-size:13px;
+
+}
+
+.card{
+
+padding:15px;
+
+}
+
+.dia{
+
+padding:8px;
+font-size:14px;
+
+}
+
+.exercicio{
+
+padding:15px;
+
+}
 
 }

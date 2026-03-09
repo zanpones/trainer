@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Menu Treino</title>
+<title>Meu Treino</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,34 +13,75 @@
 
 <body>
 
-<h1>📅 Meu Treino</h1>
+<h1>🏋️ Meu Treino</h1>
+
+<div class="menu">
 
 <a href="segunda.html"><button>SEGUNDA</button></a>
 <a href="quarta.html"><button>QUARTA</button></a>
 <a href="sexta.html"><button>SEXTA</button></a>
-<a href="peso.html"><button>⚖️ RESULTADO DE PESO</button></a>
- 
+
+</div>
+
 <div class="card">
 
-<h2>📅 Calendário de Treino</h2>
+<div class="cal-top">
+
+<button onclick="mesAnterior()">⬅</button>
+
+<h2 id="mes"></h2>
+
+<button onclick="proximoMes()">➡</button>
+
+</div>
+
+<div class="dias-semana">
+
+<div>SEG</div>
+<div>TER</div>
+<div>QUA</div>
+<div>QUI</div>
+<div>SEX</div>
+<div>SAB</div>
+<div>DOM</div>
+
+</div>
 
 <div id="calendario"></div>
 
 </div>
 
+<div class="obs">
 
-<!-- SCRIPT DO CALENDÁRIO (COLOCAR AQUI) -->
+<h2>📌 Observação</h2>
+
+<p>Terça-feira → Descanso ou Cardio</p>
+<p>Quinta-feira → Cardio + Abdômen</p>
+
+</div>
+
 <script>
+
+let data = new Date()
 
 function gerarCalendario(){
 
-let hoje = new Date()
+let ano = data.getFullYear()
+let mes = data.getMonth()
 
-let ano = hoje.getFullYear()
-let mes = hoje.getMonth()
+let meses = [
+"Janeiro","Fevereiro","Março","Abril",
+"Maio","Junho","Julho","Agosto",
+"Setembro","Outubro","Novembro","Dezembro"
+]
 
-let primeiroDia = new Date(ano, mes, 1).getDay()
-let ultimoDia = new Date(ano, mes+1, 0).getDate()
+document.getElementById("mes").innerText =
+meses[mes]+" "+ano
+
+let primeiroDia = new Date(ano,mes,1).getDay()
+primeiroDia = (primeiroDia + 6) % 7
+
+let ultimoDia = new Date(ano,mes+1,0).getDate()
 
 let calendario = document.getElementById("calendario")
 
@@ -53,7 +94,7 @@ calendario.appendChild(vazio)
 
 }
 
-for(let dia=1; dia<=ultimoDia; dia++){
+for(let dia=1;dia<=ultimoDia;dia++){
 
 let btn=document.createElement("button")
 
@@ -63,7 +104,7 @@ let chave="treino-"+ano+"-"+mes+"-"+dia
 
 if(localStorage.getItem(chave)){
 
-btn.style.background="#22c55e"
+btn.classList.add("treinado")
 
 }
 
@@ -72,12 +113,12 @@ btn.onclick=function(){
 if(localStorage.getItem(chave)){
 
 localStorage.removeItem(chave)
-btn.style.background="#3b82f6"
+btn.classList.remove("treinado")
 
 }else{
 
 localStorage.setItem(chave,"ok")
-btn.style.background="#22c55e"
+btn.classList.add("treinado")
 
 }
 
@@ -86,6 +127,22 @@ btn.style.background="#22c55e"
 calendario.appendChild(btn)
 
 }
+
+}
+
+function proximoMes(){
+
+data.setMonth(data.getMonth()+1)
+
+gerarCalendario()
+
+}
+
+function mesAnterior(){
+
+data.setMonth(data.getMonth()-1)
+
+gerarCalendario()
 
 }
 

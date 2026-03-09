@@ -1,8 +1,13 @@
 const CACHE = "treino-app"
 
 const urls = [
+"index.html",
 "login.html",
 "menu.html",
+"segunda.html",
+"quarta.html",
+"sexta.html",
+"peso.html",
 "style.css"
 ]
 

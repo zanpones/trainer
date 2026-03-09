@@ -1,278 +1,165 @@
-/* RESET */
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial;
 }
-
-/* BODY */
 
 body{
 
 background:#f1f5f9;
-padding:20px;
 text-align:center;
+padding:20px;
 
 }
 
-/* TITULO */
+.login-body{
 
-h1{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
 
+background:linear-gradient(120deg,#020617,#0f172a);
+
+}
+
+.login{
+
+background:#1e293b;
+padding:40px;
+border-radius:15px;
+width:300px;
+
+}
+
+.login h1{
+
+color:white;
 margin-bottom:20px;
-color:#1e293b;
 
 }
 
-/* MENU */
+.login input{
+
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+border:none;
+
+}
+
+.login button{
+
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#3b82f6;
+color:white;
+cursor:pointer;
+
+}
 
 .menu{
 
-margin-bottom:25px;
+margin-bottom:20px;
 
 }
-
-/* LINHA TREINO */
 
 .menu-treino{
 
 display:flex;
 justify-content:center;
 gap:10px;
-flex-wrap:wrap;
 
 }
-
-/* BOTÕES TREINO */
 
 .btn-menu{
 
-padding:10px 18px;
+padding:10px 15px;
 border:none;
 border-radius:10px;
-font-size:14px;
-font-weight:bold;
+background:#3b82f6;
+color:white;
 cursor:pointer;
 
-background:linear-gradient(135deg,#3b82f6,#2563eb);
-color:white;
-
-box-shadow:0 4px 8px rgba(0,0,0,0.15);
-
-transition:0.2s;
-
 }
-
-.btn-menu:hover{
-
-transform:translateY(-2px);
-
-}
-
-.btn-menu:active{
-
-transform:scale(0.95);
-
-}
-
-/* BOTÃO PESO */
 
 .menu-peso{
 
-margin-top:12px;
+margin-top:10px;
 
 }
 
 .btn-peso{
 
-padding:10px 22px;
+padding:10px 20px;
 border:none;
 border-radius:10px;
-font-size:14px;
-font-weight:bold;
-cursor:pointer;
-
-background:linear-gradient(135deg,#22c55e,#16a34a);
+background:#22c55e;
 color:white;
 
-box-shadow:0 4px 8px rgba(0,0,0,0.15);
-
-transition:0.2s;
-
 }
-
-.btn-peso:hover{
-
-transform:translateY(-2px);
-
-}
-
-/* CARD CALENDARIO */
 
 .card{
 
 background:white;
 padding:20px;
 border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
 max-width:500px;
 margin:auto;
 
 }
-
-/* TOPO CALENDARIO */
 
 .cal-top{
 
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:10px;
 
 }
-
-.cal-top h2{
-
-color:#1e293b;
-
-}
-
-/* BOTÃO TROCAR MES */
 
 .mes-btn{
 
-border:none;
 background:#3b82f6;
 color:white;
-font-size:18px;
-padding:6px 12px;
+border:none;
+padding:5px 10px;
 border-radius:8px;
-cursor:pointer;
 
 }
-
-/* DIAS DA SEMANA */
 
 .dias-semana{
 
 display:grid;
 grid-template-columns:repeat(7,1fr);
-font-weight:bold;
-color:#334155;
-margin-bottom:8px;
+margin-top:10px;
 
 }
-
-/* CALENDARIO */
 
 #calendario{
 
 display:grid;
 grid-template-columns:repeat(7,1fr);
-gap:6px;
-
-}
-
-/* DIA */
-
-.dia{
-
-border:none;
-padding:12px;
-border-radius:8px;
-background:#e5e7eb;
-font-weight:bold;
-cursor:pointer;
-
-transition:0.2s;
-
-}
-
-.dia:hover{
-
-background:#cbd5f5;
-
-}
-
-/* DIA TREINADO */
-
-.treinado{
-
-background:#22c55e !important;
-color:white;
-
-}
-
-/* OBSERVAÇÃO */
-
-.obs{
-
-margin-top:25px;
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1);
-max-width:500px;
-margin-left:auto;
-margin-right:auto;
-
-}
-
-.obs h2{
-
-margin-bottom:10px;
-
-}
-
-.obs p{
-
-margin:4px 0;
-
-}
-
-/* RESPONSIVO CELULAR */
-
-@media (max-width:500px){
-
-body{
-
-padding:15px;
-
-}
-
-h1{
-
-font-size:24px;
-
-}
-
-.btn-menu{
-
-font-size:13px;
-padding:8px 12px;
-
-}
-
-.btn-peso{
-
-font-size:13px;
-padding:9px 16px;
-
-}
-
-.card{
-
-padding:15px;
+gap:5px;
+margin-top:10px;
 
 }
 
 .dia{
 
 padding:10px;
-font-size:14px;
+border:none;
+border-radius:8px;
+background:#e5e7eb;
 
 }
+
+.treinado{
+
+background:#22c55e;
+color:white;
 
 }

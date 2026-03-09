@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Treinos</title>
+<title>Menu Treino</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,37 +13,85 @@
 
 <body>
 
-<h1 class="titulo">📅 Meu Treino</h1>
-
-<div class="menu">
+<h1>📅 Meu Treino</h1>
 
 <a href="segunda.html"><button>SEGUNDA</button></a>
-
 <a href="quarta.html"><button>QUARTA</button></a>
-
 <a href="sexta.html"><button>SEXTA</button></a>
-
 <a href="peso.html"><button>⚖️ RESULTADO DE PESO</button></a>
-
-</div>
-
-<div class="obs">
-
-<h2>📌 Observação</h2>
-
-<p>Terça → Descanso ou Cardio</p>
-
-<p>Quinta → Cardio + Abdômen</p>
-
-</div>
-
- <div class="card">
+ 
+<div class="card">
 
 <h2>📅 Calendário de Treino</h2>
 
 <div id="calendario"></div>
 
-</div> 
+</div>
+
+
+<!-- SCRIPT DO CALENDÁRIO (COLOCAR AQUI) -->
+<script>
+
+function gerarCalendario(){
+
+let hoje = new Date()
+
+let ano = hoje.getFullYear()
+let mes = hoje.getMonth()
+
+let primeiroDia = new Date(ano, mes, 1).getDay()
+let ultimoDia = new Date(ano, mes+1, 0).getDate()
+
+let calendario = document.getElementById("calendario")
+
+calendario.innerHTML=""
+
+for(let i=0;i<primeiroDia;i++){
+
+let vazio=document.createElement("div")
+calendario.appendChild(vazio)
+
+}
+
+for(let dia=1; dia<=ultimoDia; dia++){
+
+let btn=document.createElement("button")
+
+btn.innerText=dia
+
+let chave="treino-"+ano+"-"+mes+"-"+dia
+
+if(localStorage.getItem(chave)){
+
+btn.style.background="#22c55e"
+
+}
+
+btn.onclick=function(){
+
+if(localStorage.getItem(chave)){
+
+localStorage.removeItem(chave)
+btn.style.background="#3b82f6"
+
+}else{
+
+localStorage.setItem(chave,"ok")
+btn.style.background="#22c55e"
+
+}
+
+}
+
+calendario.appendChild(btn)
+
+}
+
+}
+
+gerarCalendario()
+
+</script>
 
 </body>
 </html>
